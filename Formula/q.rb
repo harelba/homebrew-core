@@ -1,16 +1,15 @@
 class Q < Formula
   desc "Treat text as a database"
   homepage "https://github.com/harelba/q"
-  url "https://github.com/harelba/q/archive/2.0.11.tar.gz"
-  sha256 "f0b88809d0b1f35ba7a8df5d2d86af12d10cea9e64eb554d3b7f8a5fe886d875"
+  url "https://github.com/harelba/packages-for-q/raw/master/single-binary/Darwin/2.0.9/q"
+  sha256 "88b2cd98259e64dae5ffd0efc542a8015e2ea1c13c066627847a8ff02c703b43"
   license "GPL-3.0"
   head "https://github.com/harelba/q.git"
 
   bottle :unneeded
 
   def install
-    bin.install Dir["bin/*"] - ["bin/q.bat"]
-    bin.install_symlink bin/"q.py" => "q"
+    bin.install "q"
   end
 
   test do
