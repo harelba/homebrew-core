@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
+# Formula for q - Text as Data
 class Q < Formula
   desc "Treat text as a database"
   homepage "https://github.com/harelba/q"
-  url "https://github.com/harelba/q/archive/2.0.11.tar.gz"
-  sha256 "f0b88809d0b1f35ba7a8df5d2d86af12d10cea9e64eb554d3b7f8a5fe886d875"
-  license "GPL-3.0"
+  url "https://github.com/harelba/q/archive/1.7.4.tar.gz"
+  sha256 "97a21907e4599bfdc8937ee4cb4d7e899c45ae09ae8d3c96235efa469e4f2ac3"
+  license "GPL-3.0-only"
   head "https://github.com/harelba/q.git"
 
   bottle :unneeded
 
   def install
-    bin.install Dir["bin/*"] - ["bin/q.bat"]
-    bin.install_symlink bin/"q.py" => "q"
+    bin.install "bin/q"
   end
 
   test do
